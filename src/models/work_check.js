@@ -3,24 +3,23 @@ const mongoose = require("mongoose");
 const schema = mongoose.Schema({
   name: {
     type: String,
-    require: true
+    require: true,
   },
-  employee_Id : {
-    type: Number,
-    require: true
+  employee_Id: {
+    type: String,
+    require: true,
   },
   check_In: {
-    type: Date,
-    default: Date.now()
+    type: String,
   },
   check_Out: {
-    type: Date,
-    default: null
+    type: String,
+    default: "",
   },
   is_CheckOut: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("WorkChecks", schema);

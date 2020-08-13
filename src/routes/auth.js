@@ -10,6 +10,7 @@ router.post("/signUp", async (req, res) => {
 });
 //Login
 router.post("/login", async (req, res) => {
+  console.log(req.body);
   const response = await employeeService.signIn(req.body);
   return res.json(response);
 });

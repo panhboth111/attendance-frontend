@@ -5,7 +5,7 @@ module.exports = function auth(req, res, next) {
   if (!token) return res.json({ token_failed: "Access Denied" });
 
   try {
-    const verified = jwt.verify(token, process.env.TOKEN_SECRET);
+    const verified = jwt.verify(token, "mytoken");
     req.user = verified;
     console.log("New User : " + verified.name);
     next();
